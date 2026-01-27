@@ -48,7 +48,7 @@ def init_model() -> torch.nn.Module:
 
 def get_data_loaders(batch_size: int):
     transform = Compose([ToTensor(), Normalize((0.5,), (0.5,))])
-    data_dir = '/mnt/data'
+    data_dir = './mnt/data'
     train_data = FashionMNIST(root=data_dir, train=True, download=True, transform=transform)
     test_data = FashionMNIST(root=data_dir, train=False, download=True, transform=transform)
 
