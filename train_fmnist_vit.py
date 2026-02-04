@@ -174,6 +174,9 @@ if __name__ == "__main__":
     scaling_config = ray.train.ScalingConfig(
         num_workers=num_workers,
         use_gpu=use_gpu,
+        resources_per_worker={
+            "CPU": 2
+        }
     )
 
     experiment_name = os.getenv("RAY_EXPERIMENT_NAME", f"fmnist-vit-{uuid.uuid4().hex[:6]}")
